@@ -1,0 +1,23 @@
+input, textarea{
+    margin:2rem;
+    padding:2rem 3rem;
+    text-align:left;
+    font-size:2rem !important;
+    border-radius:10px;
+    border:2px solid #DC3D24 !important;
+    box-shadow: -2px 5px 10px #232B2B;   
+    line-height:2rem; 
+}
+textarea{
+    height:25rem;
+    max-height: 20rem;
+}
+label{
+    font-size:1.5rem;
+    font-weight:bold;
+    width:20rem;
+}
+
+.form-group{
+    margin:1.5rem 15rem 2rem 15rem;
+}
