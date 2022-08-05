@@ -1,18 +1,20 @@
-import LikeDislike from "../LikeDislikeButtons/LikeDislikeButton";
-import './LikeDislikeButton.css';
+import LikeDislike from "../DisplayButton/LikeDislikeButton";
+import './Post.css'
 
 const Post = (props) => {
-    return (  
-        <div className='container'>
-            <div className='post_header_justification_text'>
-                <h2 className='column'> Poster: {props.postData.userName}</h2>
-                <div className='column post_date'> Date of Post: {props.postData.datePosted}</div>
+    return ( 
+        <div className="container p-0 mb-4">
+            <div className="d-flex p-2 justify-content-between post_header">
+                <h2 className="col-xl-6">Posted by: {props.data.userName}</h2>
+                <div className="col-xl-6 text-end post_date">Date Posted:{props.data.dateMessagePosted}</div>
             </div>
-            <div className='message vessel'>
-                <div className='post_message'></div>{props.postData.newMessage}</div>
-                <div className='thumbs_icon'><LikeDislike /></div>
+            <div className="messagebox">
+                <div className="post_message">{props.data.newMessage}</div>
+                <div className="thumbs text-end"><LikeDislike /></div> 
             </div>
-    );
+                    
+        </div>
+     );
 }
  
-export default Post;
+export default Post; 

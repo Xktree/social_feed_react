@@ -14,10 +14,10 @@ const LikeDislike = (props) => {
         }
     }
     return ( 
-        <div className='rate-post'>
+        <div className='rate-post text-end'>
             <div className={likeClass}>
-                <i className='thumbs-up' onClick={() => likeHandler('up')}></i>
-                <i className='thumbs-down' onClick={() => likeHandler('down')}></i>
+                <i className='fa-regular fa-thumbs-up' onClick={() => likeHandler('up')}></i>
+                <i className='fa-regular fa-thumbs-down' onClick={() => likeHandler('down')}></i>
             </div>
         </div>
      );

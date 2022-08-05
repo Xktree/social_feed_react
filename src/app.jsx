@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import CreatePost from './Components/CreatePosts/CreatePost';
-import DisplayPost from './Components/DisplayPosts/DisplayPost';
+import CreatePost from './Components/CreatePost/CreatePost';
+import DisplayPost from './Components/DisplayPost/DisplayPost';
 import NavBar from './Components/NavBar/NavBar';
 import './App.css';
-import './Components/NavBar/NavBar.css';
+import './Components/NavBar/NavBar';
 
 function App() {
 
-  const[navElements, setNavBarElements] = useState([{navelement: 'About Us', navelement: 'Contact Us'}])
+  const[navElements, setNavElements] = useState([{navbutton: 'About Us'}, {navbutton: 'Contact Us'}])
 
   const[newPosts, setNewPosts] = useState([])
 
@@ -17,10 +17,10 @@ function App() {
   }
 
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid m-0 mb-1 p-0'>
         <NavBar navProps={navElements} />
         <div className='container'>
-            <CreatePost addContactPost={addNewPost} />
+            <CreatePost addNewPost={addNewPost} />
             <DisplayPost postDetails={newPosts} />
         </div>
     </div>

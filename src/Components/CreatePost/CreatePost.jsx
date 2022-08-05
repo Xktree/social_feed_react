@@ -1,32 +1,45 @@
 import React, { useState } from 'react';
-import CreatePost from './Components/CreatePost/CreatePost';
-import DisplayPost from './Components/DisplayPost/DisplayPost';
-import NavBar from './Components/Nav/NavBar';
-import './App.css'
-import './Components/Nav/Nav.css'
+import './CreatePost.css';
 
+const CreatePost = (props) => {
+    const[userName, setUserName] = useState('');
+    const[newMessage, setNewMessage] = useState('');
+    const today = new Date();
+    const date = `${today.getMonth()}/${today.getDate()}/${today.getFullYear()}`
 
-function App() {
+    function catchUserInputSubmission(event){
+        event.preventDefault();
+        let newPost = {
+            userName,
+            newMessage,
+            dateMessagePosted: date
+        } 
 
-  const [navButtons, setNavButtons] = useState([{navbutton:'Home',navlink:'#'},{navbutton:'About Us',navlink:'#about'},{navbutton:'Contact Us',navlink:'#contact'}])
-
-  const [newPosts,setNewPosts] = useState([])
-
-  function addNewPost(post){
-      let tempPost = [...newPosts, post];
-      setNewPosts(tempPost);
-  }
-
-  
-  return (
-    <div className="container-fluid m-0 mb-1 p-0">
-      <NavBar navProps={navButtons} />  
-      <div className="container">  
-        <CreatePost addNewPost={addNewPost} />
-        <DisplayPost postInfo={newPosts} />
-      </div>
+        props.addNewPost(newPost);
+        setUserName('');
+        setNewMessage('');
+    }
+    return ( 
+        <div>
+            <div className='m-3 container'>
+            <h2>Create a Post</h2>
+            <form className='form-horizontal-style' onSubmit={catchUserInputSubmission}>
+                <div className='form-group'>
+                    <label className="control-label">Username</label>
+                    <input type='text' className='form-control' value={userName} onChange={(event) => setUserName(event.target.value)} />
+                </div>
+                <div className='form-group'>
+                    <label className='control-label'>Message</label>
+                    <textarea className='form-control' value={newMessage} onChange={(event) => setNewMessage(event.target.value)} ></textarea>
+                </div>
+                <div className='form-group'>
+                    <input type='submit' className='warning' value='Create Post' />
+                </div>
+            </form>
+        </div>
+        <hr />
     </div>
-  );
+ );
 }
 
-export default App;
+export default CreatePost;
