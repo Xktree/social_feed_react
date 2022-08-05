@@ -1,0 +1,33 @@
+.post_header{
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow:0px 3px 8px #888;
+    background-color: rgb(142, 73, 191);
+    color:azure;
+   }
+
+.post_header h2{
+    padding:1rem 2rem !important;
+}
+.post_date{
+    font-size:1rem;
+    font-weight:bold;
+    padding:1rem 2rem;
+}
+
+.messagebox{
+    border:10px solid rgb(11, 75, 135);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top:none;
+    padding:1.5rem;
+    font-size:2rem;
+    padding:1.75rem 1.75rem 1.2rem 1.75rem;
+}
+
+.post_message{
+    margin:1rem 2rem;
+    border-left: 1rem solid rgb(207, 177, 7);
+    padding:0 1rem;
+    line-height: 2rem;
+}

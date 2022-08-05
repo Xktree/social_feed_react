@@ -3,7 +3,7 @@ const NavBar = (props) => {
         <nav className='navbar default'>
             <div className='container'>
                 <div className='navbar-header'>
-                    <h1><a className='navbar-brand' href='#'><Feed></Feed><span className='lighter'>In</span></a></h1>
+                    <h1><a className='navbar-brand' href='#'>Feed<span className='lighter'>In</span></a></h1>
                 </div>
                 <ul className='navigation'>
                     {props.navProps.map((navToggle, index) => {
