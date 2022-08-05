@@ -3,20 +3,20 @@ import './CreatePost.css';
 
 const CreatePost = (props) => {
     const[userName, setUserName] = useState('');
-    const[newPost, setNewPost] = useState('');
+    const[newMessage, setNewMessage] = useState('');
     const today = new Date();
     const date = `${today.getMonth()}/${today.getDate()}/${today.getFullYear()}`
 
     function catchUserInputSubmission(event){
         event.preventDefault();
-        let newMessage = {
+        let newPost = {
             userName,
-            newPost,
+            newMessage,
             dateMessagePosted: date
         } 
-        props.addContactPost(newMessage);
+        props.addNewPost(newPost);
         setUserName('');
-        setNewPost('');
+        setNewMessage('');
     }
     return ( 
         <div>
@@ -29,7 +29,7 @@ const CreatePost = (props) => {
                 </div>
                 <div className='form-group'>
                     <label className='control-label'>Message</label>
-                    <textarea className='form-control' value={newMessage} onChange={(event) => setNewPost(event.target.value)} ></textarea>
+                    <textarea className='form-control' value={newMessage} onChange={(event) => setNewMessage(event.target.value)} ></textarea>
                 </div>
                 <div className='form-group'>
                     <input type='submit' className='warning' value='Create Post' />

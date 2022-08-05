@@ -9,19 +9,19 @@ function App() {
 
   const[navElements, setNavBarElements] = useState([{navelement: 'About Us', navelement: 'Contact Us'}])
 
-  const[newContactPosts, setContactPosts] = useState([])
+  const[newPosts, setNewPosts] = useState([])
 
-  function addContactPost(post){
-    let tempPost = [...newContactPosts, post];
-    setNewContactPosts(tempPost);
+  function addNewPost(post){
+    let tempPost = [...newPosts, post];
+    setNewPosts(tempPost);
   }
 
   return (
     <div className='container-fluid'>
         <NavBar navProps={navElements} />
         <div className='container'>
-            <CreatePost addContactPost={addContactPost} />
-            <DisplayPost postDetails={newContactPosts} />
+            <CreatePost addContactPost={addNewPost} />
+            <DisplayPost postDetails={newPosts} />
         </div>
     </div>
   );

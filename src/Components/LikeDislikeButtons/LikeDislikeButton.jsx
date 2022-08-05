@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import './LikeDislikeButton.css';
 
 const LikeDislike = (props) => {
 
-    const[like, setLike] = useState('');
+    const[likeClass, setLikeClass] = useState('');
 
     function likeHandler(thumb){
         if(thumb === 'up'){
-            setLike('like');
+            setLikeClass('like');
         }
         else{
-            setLike('dislike');
+            setLikeClass('dislike');
         }
     }
     return ( 
         <div className='rate-post'>
-            <div className={like}>
+            <div className={likeClass}>
                 <i className='thumbs-up' onClick={() => likeHandler('up')}></i>
                 <i className='thumbs-down' onClick={() => likeHandler('down')}></i>
             </div>

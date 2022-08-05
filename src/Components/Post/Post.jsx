@@ -1,5 +1,5 @@
 import LikeDislike from "../LikeDislikeButtons/LikeDislikeButton";
-import './Post/css';
+import './LikeDislikeButton.css';
 
 const Post = (props) => {
     return (  
